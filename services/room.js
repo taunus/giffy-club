@@ -62,6 +62,7 @@ function query (options, done) {
       debug('Updating cached room', options.room, options.query);
       if (cachedRoom.history[cachedRoom.history.length - 1] !== options.query) {
         cachedRoom.history.push(options.query);
+        cachedRoom.history.splice(0, cachedRoom.history.length - 40);
       }
       if (gifs.length) {
         cachedRoom.query = options.query;
