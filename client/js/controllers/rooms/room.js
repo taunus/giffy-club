@@ -7,7 +7,7 @@ var skyrocket = require('skyrocket');
 function roomController (viewModel, container, route) {
   var rocket = skyrocket.scope(container, viewModel);
   var roomname = viewModel.room;
-  var room = '/rooms/' + roomname;
+  var room = '/r/' + roomname;
 
   taunus.navigate(room, { dry: true });
   rocket.on(room, reaction);

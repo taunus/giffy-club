@@ -5,5 +5,5 @@ module.exports = [
   { route: '/new', action: 'rooms/create' },
   { route: '/fork', action: 'rooms/fork' },
   { route: '/random', action: 'rooms/random' },
-  { route: '/rooms/:room', action: 'rooms/room' }
+  { route: '/r/:room', action: 'rooms/room' }
 ];

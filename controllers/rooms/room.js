@@ -7,7 +7,7 @@ var socket = require('../../realtime');
 
 function room (req, res, next) {
   var roomname = req.params.room || 'home';
-  var room = '/rooms/' + roomname;
+  var room = '/r/' + roomname;
   var query = req.query.q;
 
   roomService.query({ room: roomname, query: query }, response);
