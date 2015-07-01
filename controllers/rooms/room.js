@@ -25,7 +25,7 @@ function room (req, res, next) {
       room: roomname,
       terms: terms,
       gifs: result.gifs,
-      history: result.history
+      history: result.history.reverse()
     };
 
     res.viewModel = {

@@ -1,0 +1,140 @@
+@import 'variables/colors'
+@import 'variables/fonts'
+@import 'reset/document'
+@import 'reset/tags'
+@import 'reset/pseudo'
+@import 'design/links'
+@import 'design/layout'
+@import 'components/fa-font-awesome'
+
+body
+  background-color c-pink-light
+  color c-white
+
+.di-clearfix:after
+  content ' '
+  display block
+  visibility hidden
+  clear both
+  font-size 0
+  height 0
+
+.ng-navigation
+  background-color c-purple
+
+.ng-random,
+.ng-new,
+.ng-room-name
+  padding 10px
+
+.ng-random,
+.ng-new
+  float right
+  text-align center
+  font-size 38px
+  line-height 56px
+  width 20%
+
+  &:hover
+    background-color rgba(c-black, 0.1)
+
+.ng-room-name
+  display inline-block
+  text-overflow ellipsis
+  white-space nowrap
+  overflow hidden
+  margin-bottom 0
+  font-size 44px
+  width 60%
+
+.sh-query,
+.sh-submit,
+.fo-github
+  padding 10px
+  line-height 38px
+  font-size 32px
+  vertical-align top
+  border none
+
+.sh-query
+  background-color c-pink-dark
+  color c-white
+  width 80%
+
+.sh-submit
+  background-color c-pink
+  width 20%
+
+  &:hover
+    background-color c-pink-bright
+
+.gf-container
+  background-color c-pink-light
+  font-size 0
+
+.gf-gif
+  vertical-align top
+  display inline-block
+  width 100%
+
+.mg-item
+  display table
+  width 100%
+
+  &:nth-child(even)
+    background-color rgba(c-black, 0.1)
+
+.mg-message,
+.mg-fork
+  display table-cell
+
+.mg-message
+  width 80%
+  padding 10px
+
+.mg-fork
+  width 20%
+  padding 10px
+  font-size 26px
+  text-align center
+
+  &:hover
+    background-color rgba(c-black, 0.1)
+
+.fo-github
+  float right
+  display inline-block
+  text-align center
+  background-color c-pink
+  width 20%
+
+  &:hover
+    background-color c-pink-bright
+
+@media only screen and (min-width: 500px)
+  .ng-room-name
+    width 80%
+
+  .ng-random,
+  .ng-new
+    width 10%
+
+  .sh-query
+    width 90%
+
+  .sh-submit,
+  .fo-github
+    width 10%
+
+  .gf-gif
+    width 50%
+
+  .mg-message
+    width 90%
+
+  .mg-fork
+    width 10%
+
+@media only screen and (min-width: 800px)
+  .gf-gif
+    width 25%

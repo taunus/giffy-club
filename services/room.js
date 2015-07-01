@@ -52,11 +52,11 @@ function query (options, done) {
     } else {
       saveQuery();
     }
-    var room = cachedRoom || {};
+    var room = cachedRoom || { history: [], gifs: [] };
     done(null, {
       gifs: room.gifs,
       history: room.history,
-      success: gifs.length > 0
+      success: room.gifs.length > 0
     });
 
     function updateRoom () {

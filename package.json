@@ -1,11 +1,11 @@
 {
-  "name": "gifcito",
+  "name": "giffy.club",
   "version": "1.0.0",
-  "description": "Gifcito.com",
+  "description": "Public website for giffy.club",
   "main": "app.js",
   "scripts": {
     "clean": "rm -rf .bin",
-    "client": "mkdir -p .bin/public/js && taunus -o && browserify client/js/main.js -do .bin/public/js/all.js",
+    "client": "mkdir -p .bin/public/{css,js} && taunus -o && browserify client/js/main.js -do .bin/public/js/all.js && stylus client/css/all.styl -o .bin/public/css --include-css && cp -r node_modules/font-awesome-stylus/fonts .bin/public",
     "start": "npm run clean && npm run views && npm run client && node app.js",
     "views": "hoganator --outputdir .bin views/*.html views/**/*.html"
   },
@@ -17,10 +17,13 @@
     "debug": "2.2.0",
     "dominus": "^5.0.0",
     "express": "^4.13.0",
+    "font-awesome-stylus": "4.3.0",
     "gradual": "1.0.2",
     "hogan.js": "^3.0.2",
     "hoganator": "^1.0.0",
     "lodash": "3.10.0",
+    "nib": "1.1.0",
+    "normalize.css": "3.0.3",
     "random-word": "1.0.2",
     "request": "2.58.0",
     "serve-static": "^1.10.0",
@@ -30,5 +33,8 @@
     "taunus": "^6.1.6",
     "taunus-express": "^3.0.0",
     "titlecase": "1.0.2"
+  },
+  "devDependencies": {
+    "stylus": "0.51.1"
   }
 }

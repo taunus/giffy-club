@@ -1,17 +1,24 @@
-<a href='/random'>Random!</a>
-<a href='/new'>New!</a>
-<form method='post' action='/rooms/{{room}}'>
-  <input name='q' placeholder='Search Giphy' value='{{terms}}' autofocus />
-  <input type='submit' value='Search now!' />
+<header class='ng-navigation di-clearfix'>
+  <h1 class='ng-room-name'>/{{room}}</h1>
+  <a href='/random' class='ng-random fa fa-random'></a>
+  <a href='/new' class='ng-new fa fa-magic'></a>
+</header>
+<form method='post' action='/rooms/{{room}}' class='sh-form'>
+  <input name='q' placeholder='Your message...' value='{{terms}}' autofocus class='sh-query' /><button class='sh-submit fa fa-paper-plane'></button>
 </form>
-
-{{#gifs}}
-  <img src='{{url}}' width='{{width}}' height='{{height}}' />
-{{/gifs}}
-
-{{#history}}
-  <p>
-    <span>{{.}}</span>
-    <a href='/fork?q={{.}}'>Fork!</a>
-  </p>
-{{/history}}
+<section class='gf-container'>
+  {{#gifs}}
+    <img src='{{url}}' width='{{width}}' height='{{height}}' class='gf-gif' />
+  {{/gifs}}
+</section>
+<article class='mg-container'>
+  {{#history}}
+    <section class='mg-item'>
+      <span class='mg-message'>{{.}}</span>
+      <a href='/fork?q={{.}}' class='mg-fork fa fa-code-fork'></a>
+    </section>
+  {{/history}}
+</article>
+<footer>
+  <a href='https://github.com/bevacqua/giffy.club' class='fo-github fa fa-github'></a>
+</footer>
