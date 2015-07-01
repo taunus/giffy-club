@@ -40,12 +40,10 @@ function query (options, done) {
 
   function store (gifs) {
     var newRoom;
-    if (gifs.length) {
-      if (cachedRoom) {
-        updateRoom();
-      } else {
-        saveRoom();
-      }
+    if (cachedRoom) {
+      updateRoom();
+    } else {
+      saveRoom();
     }
     if (cachedQuery) {
       updateQuery();
@@ -67,8 +65,10 @@ function query (options, done) {
       if (cachedRoom.history[cachedRoom.history.length - 1] !== options.query) {
         cachedRoom.history.push(options.query);
       }
-      cachedRoom.query = options.query;
-      cachedRoom.gifs = gifs;
+      if (gifs.length) {
+        cachedRoom.query = options.query;
+        cachedRoom.gifs = gifs;
+      }
     }
     function saveRoom () {
       debug('Caching room', options.room, options.query);
