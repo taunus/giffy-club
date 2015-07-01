@@ -108,7 +108,7 @@ function random (from) {
   }
   do {
     room = rooms[Math.floor(Math.random() * rooms.length)];
-  } while (room !== from);
+  } while (room.room === from);
   return room.room;
 }
 
