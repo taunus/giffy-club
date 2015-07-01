@@ -98,9 +98,18 @@ function getTerms (room) {
   return null;
 }
 
-function random () {
-  var room = rooms[Math.floor(Math.random() * rooms.length)];
-  return room ? room.room : 'home';
+function random (from) {
+  var room;
+  if (rooms.length === 0) {
+    return 'home';
+  }
+  if (rooms.length === 1) {
+    return rooms[0];
+  }
+  do {
+    room = rooms[Math.floor(Math.random() * rooms.length)];
+  } while (room !== from);
+  return room.room;
 }
 
 function create () {

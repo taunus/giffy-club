@@ -4,7 +4,7 @@ var taunus = require('taunus');
 var roomService = require('../../services/room');
 
 function random (req, res, next) {
-  taunus.redirect(req, res, '/rooms/' + roomService.random());
+  taunus.redirect(req, res, '/rooms/' + roomService.random(req.query.from));
 }
 
 module.exports = random;

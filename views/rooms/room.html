@@ -1,6 +1,6 @@
 <header class='ng-navigation di-clearfix'>
   <h1 class='ng-room-name'>/{{room}}</h1>
-  <a href='/random' class='ng-random fa fa-random'></a>
+  <a href='/random?from={{room}}' class='ng-random fa fa-random'></a>
   <a href='/new' class='ng-new fa fa-magic'></a>
 </header>
 <form method='post' action='/rooms/{{room}}' class='sh-form'>
