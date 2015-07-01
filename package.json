@@ -17,6 +17,8 @@
   "dependencies": {
     "body-parser": "1.13.1",
     "browserify": "10.2.4",
+    "bundle-collapser": "1.2.0",
+    "clean-css": "3.3.5",
     "debug": "2.2.0",
     "dominus": "5.0.0",
     "express": "4.13.0",
@@ -36,6 +38,7 @@
     "stylus": "0.51.1",
     "taunus": "6.1.6",
     "taunus-express": "3.0.0",
-    "titlecase": "1.0.2"
+    "titlecase": "1.0.2",
+    "uglify-js": "2.4.23"
   }
 }

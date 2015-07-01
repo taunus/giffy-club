@@ -55,8 +55,7 @@ function query (options, done) {
     var room = cachedRoom || { history: [], gifs: [] };
     done(null, {
       gifs: room.gifs,
-      history: room.history,
-      success: room.gifs.length > 0
+      history: room.history
     });
 
     function updateRoom () {

@@ -32,14 +32,12 @@ function room (req, res, next) {
       model: model
     };
 
-    if (result.success) {
-      socket.io.to(room).emit('/skyrocket/update', {
-        updates: [{
-          rooms: [room],
-          model: model
-        }]
-      });
-    }
+    socket.io.to(room).emit('/skyrocket/update', {
+      updates: [{
+        rooms: [room],
+        model: model
+      }]
+    });
     next();
   }
 }

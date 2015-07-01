@@ -3,7 +3,6 @@
 var $ = require('dominus');
 var taunus = require('taunus');
 var skyrocket = require('skyrocket');
-var main = $.findOne('main');
 
 function roomController (viewModel, container, route) {
   var rocket = skyrocket.scope(container, viewModel);
@@ -14,8 +13,12 @@ function roomController (viewModel, container, route) {
   rocket.on(room, reaction);
 
   function reaction (update) {
+    var gifs = $.findOne('.gf-container');
+    var history = $.findOne('.mg-container');
+
     taunus.state.model.title = update.model.title;
-    taunus.partial(main, 'rooms/room', viewModel);
+    taunus.partial(gifs, 'rooms/gifs', viewModel);
+    taunus.partial(history, 'rooms/history', viewModel);
     taunus.navigate(room, { dry: true });
   }
 }

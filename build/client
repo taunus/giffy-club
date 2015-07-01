@@ -1,7 +1,16 @@
 #!/bin/bash
 
-mkdir -p .bin/public/{css,js}
+DIST=.bin/public
+
+mkdir -p $DIST/{css,js}
 taunus -o
-browserify client/js/main.js -do .bin/public/js/all.js
-stylus client/css/all.styl -o .bin/public/css --include-css
-cp -r node_modules/font-awesome-stylus/fonts .bin/public
+stylus client/css/all.styl --include-css --include client/css --print | cleancss --s0 > $DIST/css/all.css
+cp -r node_modules/font-awesome-stylus/fonts $DIST
+
+browserify client/js/main.js \
+  --plugin bundle-collapser/plugin \
+    | uglifyjs \
+      --mangle \
+      --compress "comparisons=false,keep_fargs=true,unsafe=true,unsafe_comps=true,warnings=false" \
+      --beautify "ascii_only=true,beautify=false" \
+      --output $DIST/js/all.js

@@ -8,6 +8,7 @@ var main = $.findOne('main');
 
 require('./conventions/forms')();
 require('./conventions/realtime')();
+require('./conventions/autofocus')();
 require('./thirdparty/google-analytics')();
 
 function track () {
