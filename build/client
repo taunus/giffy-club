@@ -1,0 +1,7 @@
+#!/bin/bash
+
+mkdir -p .bin/public/{css,js}
+taunus -o
+browserify client/js/main.js -do .bin/public/js/all.js
+stylus client/css/all.styl -o .bin/public/css --include-css
+cp -r node_modules/font-awesome-stylus/fonts .bin/public

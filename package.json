@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "clean": "rm -rf .bin",
-    "client": "mkdir -p .bin/public/{css,js} && taunus -o && browserify client/js/main.js -do .bin/public/js/all.js && stylus client/css/all.styl -o .bin/public/css --include-css && cp -r node_modules/font-awesome-stylus/fonts .bin/public",
+    "client": "build/client",
     "start": "npm run clean && npm run views && npm run client && node app.js",
     "views": "hoganator --outputdir .bin views/*.html views/**/*.html"
   },
