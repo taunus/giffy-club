@@ -6,6 +6,7 @@ mkdir -p $DIST/{css,js}
 taunus -o
 stylus client/css/all.styl --include-css --include client/css --print | cleancss --s0 > $DIST/css/all.css
 cp -r node_modules/font-awesome-stylus/fonts $DIST
+cp -r client/favicon.ico $DIST
 
 browserify client/js/main.js \
   --plugin bundle-collapser/plugin \
