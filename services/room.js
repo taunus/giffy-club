@@ -40,10 +40,12 @@ function query (options, done) {
 
   function store (gifs) {
     var newRoom;
-    if (cachedRoom) {
-      updateRoom();
-    } else {
-      saveRoom();
+    if (options.query) {
+      if (cachedRoom) {
+        updateRoom();
+      } else {
+        saveRoom();
+      }
     }
     if (cachedQuery) {
       updateQuery();
@@ -58,9 +60,6 @@ function query (options, done) {
     });
 
     function updateRoom () {
-      if (!options.query) {
-        return;
-      }
       debug('Updating cached room', options.room, options.query);
       if (cachedRoom.history[cachedRoom.history.length - 1] !== options.query) {
         cachedRoom.history.push(options.query);
