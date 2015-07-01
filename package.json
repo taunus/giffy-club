@@ -11,6 +11,9 @@
   },
   "author": "Nicolas Bevacqua <nicolasbevacqua@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "iojs": "2.2.1"
+  },
   "dependencies": {
     "body-parser": "^1.13.1",
     "browserify": "^10.2.4",
