@@ -1,0 +1,17 @@
+<a href='/random'>Random!</a>
+<a href='/new'>New!</a>
+<form method='post' action='/rooms/{{room}}'>
+  <input name='q' placeholder='Search Giphy' value='{{terms}}' autofocus />
+  <input type='submit' value='Search now!' />
+</form>
+
+{{#gifs}}
+  <img src='{{url}}' width='{{width}}' height='{{height}}' />
+{{/gifs}}
+
+{{#history}}
+  <p>
+    <span>{{.}}</span>
+    <a href='/fork?q={{.}}'>Fork!</a>
+  </p>
+{{/history}}
