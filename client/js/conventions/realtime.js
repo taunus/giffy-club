@@ -1,8 +1,8 @@
 'use strict';
 
-var client = require('socket.io-client');
+var taunus = require('taunus');
 var skyrocket = require('skyrocket');
-var gradual = require('gradual');
+var client = require('socket.io-client');
 var io = client('');
 
 io.on('connect', connect);
@@ -21,7 +21,7 @@ function setup () {
     revolve: revolve
   });
 
-  gradual.on('data', skyrocket.react);
+  taunus.gradual.on('data', skyrocket.react);
   io.on('/skyrocket/update', skyrocket.react);
 
   function revolve (type, rooms) {

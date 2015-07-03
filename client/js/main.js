@@ -3,6 +3,7 @@
 var $ = require('dominus');
 var taunus = require('taunus');
 var wiring = require('../../.bin/wiring');
+var realtime = require('./conventions/realtime');
 var analyticsService = require('./services/google-analytics');
 var main = $.findOne('main');
 
@@ -15,5 +16,11 @@ function track () {
   analyticsService.pageView();
 }
 
+function generateQueryString () {
+  return realtime.id ? { sid: realtime.id } : {};
+}
+
 taunus.on('change', track);
-taunus.mount(main, wiring);
+taunus.mount(main, wiring, {
+  qs: generateQueryString
+});
