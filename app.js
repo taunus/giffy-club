@@ -28,5 +28,5 @@ taunusExpress(taunus, app, taunusOptions);
 server.listen(port, listening);
 
 function listening () {
-  console.log('Giffy.club running on http://localhost:%d', port);
+  console.log('Giffy club running on http://localhost:%d', port);
 }
